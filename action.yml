@@ -60,6 +60,7 @@ runs:
             export REPO="$(echo "${{ inputs.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
             echo "REPOSITORY_OWNER=$OWNER" >> $GITHUB_ENV
             echo "REPOSITORY_NAME=$REPO" >> $GITHUB_ENV
+            [ -z "${{ inputs.github_access_token }}" ] && echo "Token is empty"
     - shell: bash
       run: ${{ github.action_path }}/write.sh
       env:
