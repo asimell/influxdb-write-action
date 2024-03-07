@@ -64,7 +64,7 @@ runs:
     - shell: bash
       run: ${{ github.action_path }}/write.sh
       env:
-        GH_ACCESS_TOKEN: ${{ inputs.github_access_token }}
+        GITHUB_ACCESS_TOKEN: ${{ inputs.github_access_token }}
         OWNER: "${{ env.REPOSITORY_OWNER }}"
         REPO: "${{ env.REPOSITORY_NAME }}"
         WORKFLOW_RUN_ID: ${{ inputs.workflow_run_id }}
