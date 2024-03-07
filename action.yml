@@ -7,10 +7,11 @@ inputs:
   repository:
     description: 'Name of the repository where the workflow is'
     required: true
-    default: "${{ github.GITHUB_REPOSITORY }}"
+    default: "${{ github.repository }}"
   workflow_run_id:
     description: 'ID of the workflow where data is to be gathered.'
     required: true
+    default: "${{ github.run_id }}"
   influxdb_url:
     description: 'InfluxDB URL'
     required: true
