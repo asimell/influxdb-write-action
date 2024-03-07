@@ -16,12 +16,16 @@ def parse_workflow_data() -> Point:
     assert repo != None
     assert owner != None
     assert token != None
+    assert token != ""
 
     resp = requests.get(f"https://api.github.com/repos/{owner}/{repo}/actions/runs/{run_id}",
                        headers={"Accept": "application/vnd.github+json",
                                 "Authorization": f"Bearer {token}",
                                 "X-GitHub-Api-Version": "2022-11-28"})
     data = json.loads(resp.text)
+
+    if resp.status_code != 200:
+        raise RuntimeError(resp.text)
 
     p.tag("name", data["name"])
     p.tag("path", data["path"])
