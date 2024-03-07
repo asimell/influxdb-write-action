@@ -74,7 +74,6 @@ runs:
         INFLUXDB_V2_TIMEOUT: "${{ inputs.influxdb_timeout }}"
         INFLUXDB_V2_VERIFY_SSL: "${{ inputs.influxdb_verify_ssl }}"
         INFLUXDB_V2_SSL_CA_CERT: "${{ inputs.influxdb_ssl_ca_cert }}"
-        INFLUXDB_V2_SSL_CA_CERT: "${{ inputs.influxdb_ssl_ca_cert }}"
         INFLUXDB_V2_CERT_FILE: "${{ inputs.influxdb_cert_file }}"
         INFLUXDB_V2_CERT_KEY_FILE: "${{ inputs.influxdb_cert_key_file }}"
         INFLUXDB_V2_CERT_KEY_PASSWORD: "${{ inputs.influxdb_cert_key_password }}"
