@@ -45,3 +45,18 @@ jobs:
 | influxdb_cert_key_password | | String or function which returns password for decrypting the mTLS private key |
 | influxdb_connection_pool_maxsize | 10000 | Set the number of connections to save that can be reused by urllib3 |
 | influxdb_auth_basic | | Enable http basic authentication when talking to a InfluxDB 1.8.x without authentication but is accessed via reverse proxy with basic authentication (defaults to false) |
+
+## Supported Metrics
+
+| Name | Type | Description |
+| :--- | :--- | :--- |
+| name | string | Name of the workflow |
+| path | string | Path to the workflow file |
+| repository | string | Name of the repository (`{owner}/{name}`) |
+| head_branch | string | Name of the branch where the workflow is run |
+| run_number | int| Run number |
+| result | string | `success`, `failure`, `cancelled`, `skipped` |
+| start_time | date | ISO 8601-format (`YYYY-MM-DDTHH:mm:ssZ`)  |
+| duration | int | Elapsed time in seconds  |
+| user | string | User who caused the workflow to run |
+| cause | string | The reason the workflow was run |
