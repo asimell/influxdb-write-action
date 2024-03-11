@@ -29,8 +29,10 @@ def parse_workflow_data() -> Point:
 
     p.tag("name", data["name"])
     p.tag("path", data["path"])
+    p.tag("repository", f"{owner}/{repo}")
     p.field("name", data["name"])
     p.field("path", data["path"])
+    p.field("repository", f"{owner}/{repo}")
     p.field("head_branch", data["head_branch"])
     p.field("run_number", data["run_number"])
     p.field("result", data["conclusion"])
